@@ -1,0 +1,115 @@
+.footer {
+    position: relative;
+    background: $darkBlue;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    text-align: center;
+
+    @include breakpoint-up(tablet) {
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
+
+    &__grid {
+
+        @include breakpoint-up(tablet) {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 3fr;
+            grid-template-rows: 96px;
+            gap: 16px;
+        }
+    }
+
+    .col1,
+    .col3 {
+        margin-bottom: 30px;
+
+        @include breakpoint-up(tablet) {
+            margin-bottom: 0;
+        }
+    }
+
+    .col2,
+    .col3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        a {
+            font-size: 0.75rem;
+            color: white;
+
+            @include breakpoint-up(tablet) {
+                font-size: 0.875rem;
+            }
+        }
+
+        @include breakpoint-up(tablet) {
+            align-items: start;
+        }
+    }
+
+    .col2 a,
+    .col3 a:not(:last-child) {
+        margin-bottom: 16px;
+    }
+
+    .col1 {
+        display: grid;
+
+
+        .footer__logo img {
+            margin-bottom: 30px;
+
+            @include breakpoint-up(tablet) {
+                margin-bottom: 0;
+            }
+        }
+
+        .footer__social {
+            @include breakpoint-up(tablet) {
+                align-self: end;
+            }
+        }
+
+        .footer__social a:not(:last-child) {
+            display: inline-block;
+            margin-right: 16px;
+        }
+
+        @include breakpoint-up(tablet) {
+            text-align: left;
+        }
+    }
+
+    .col4 {
+
+        .footer__btn {
+            margin-bottom: 30px;
+        }
+
+        p {
+            font-size: 1rem;
+        }
+
+        @include breakpoint-up(tablet) {
+            display: grid;
+            justify-items: end;
+            align-items: center;
+        }
+    }
+
+    .attribution {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 11px;
+        text-align: center;
+        color: #ffffff;
+    }
+
+    .attribution a {
+        color: #ffffff;
+    }
+}

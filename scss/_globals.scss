@@ -1,0 +1,155 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: "Public Sans", sans-serif;
+  font-size: 1.125rem;
+  overflow-x: hidden;
+
+  &.noscroll {
+    overflow: hidden;
+  }
+}
+
+a,
+a:hover,
+a:active {
+  text-decoration: none;
+}
+
+// Typography
+h1 {
+  font-size: 2.25rem;
+  font-weight: 300;
+  line-height: 2.625rem;
+  color: $darkBlue;
+
+  @include breakpoint-up(tablet) {
+    font-size: 3.375rem;
+    line-height: 4rem;
+  }
+}
+
+h2 {
+  font-size: 1.875rem;
+  font-weight: 300;
+  line-height: 2.625rem;
+  color: $darkBlue;
+
+  @include breakpoint-up(tablet) {
+    font-size: 2.8375rem;
+    line-height: 3rem;
+  }
+
+}
+
+h3 {
+  font-size: 1.125rem;
+  font-weight: 300;
+  line-height: 2.625rem;
+  color: $darkBlue;
+
+  @include breakpoint-up(tablet) {
+    font-size: 1.5rem;
+    line-height: 3rem;
+  }
+}
+
+h4 {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.25rem;
+  color: $darkBlue;
+}
+
+p {
+  font-family: 'Public Sans', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  color: $grayishBlue;
+
+  @include breakpoint-up(tablet) {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+}
+
+// Content Spacing
+.container {
+  padding: 0 1.5rem 0 1.5rem;
+  margin: 0 auto;
+
+  @include breakpoint-up(tablet) {
+    max-width: 1110px;
+    padding: 0 2.5rem 0 2.5rem;
+  }
+
+  @include breakpoint-up(desktop) {
+    padding: 0;
+  }
+
+}
+
+// Flexbox
+.flex {
+  display: flex;
+
+  &-jc-sb {
+    justify-content: space-between;
+  }
+
+  &-jc-c {
+    justify-content: center;
+  }
+
+  &-ai-c {
+    align-items: center;
+  }
+}
+
+// Buttons
+button,
+.button {
+  border-style: none;
+  border-radius: 50px;
+  padding: 14px 30px;
+  background: linear-gradient(to right, $limeGreen, $brightCyan);
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover,
+button:active,
+.button:hover,
+.button:active {
+  border-style: none;
+}
+
+// Responsive
+.hide-for-mobile {
+
+  // Hide for Tablet and Mobile
+  @include breakpoint-down(phone) {
+    display: none;
+  }
+}
+
+.hide-for-desktop {
+
+  // Hide for Desktop
+  @include breakpoint-up(tablet) {
+    display: none;
+  }
+}

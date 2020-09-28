@@ -1,0 +1,131 @@
+.header {
+  &.open {
+    .header__toggle {
+      span:first-child {
+        transform: rotate(45deg);
+        top: 7px;
+      }
+
+      span:nth-child(2) {
+        opacity: 0;
+      }
+
+      span:last-child {
+        transform: rotate(-45deg);
+        top: -7.5px;
+      }
+    }
+  }
+
+  .overlay {
+    visibility: hidden;
+    position: fixed;
+    top: 60px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient($darkBlue, transparent);
+    z-index: 1;
+  }
+
+  nav {
+    position: relative;
+    background: $white;
+    height: 60px;
+  }
+
+  &__logo {
+    img {
+      width: 140px;
+      height: 22px;
+    }
+  }
+
+  // Mobile Menu
+  &__toggle {
+    > span {
+      position: relative;
+      top: 0;
+      display: block;
+      width: 24px;
+      height: 2px;
+      background-color: $darkBlue;
+      transition: all 300ms ease;
+
+      &:not(:last-child) {
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  &__menu {
+    background: $white;
+    margin-top: 24px;
+    padding: 35px 0px;
+    border-radius: 10px;
+    position: absolute;
+    width: calc(100% - 3rem);
+    left: 50%;
+    transform: translateX(-50%);
+    visibility: hidden;
+    z-index: 1;
+
+    a {
+      display: block;
+      padding: 10px 0px;
+      text-align: center;
+      color: $darkBlue;
+
+      &:not(:last-child) {
+        padding-bottom: 30px;
+      }
+    }
+  }
+
+  // Desktop Menu
+  .header__links {
+    li {
+      list-style: none;
+
+      &:not(:last-child) {
+        margin-right: 30px;
+      }
+    }
+
+    a {
+      position: relative;
+      color: $grayishBlue;
+      font-size: $font-sm;
+      transition: 150ms ease;
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        height: 5px;
+        left: 0;
+        right: 0;
+        bottom: -30px;
+        background: linear-gradient(to right, $limeGreen, $brightCyan);
+        opacity: 0;
+        transition: opacity 150ms ease;
+      }
+
+      &:hover {
+        color: $darkBlue;
+
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__btn {
+    transition: opacity 150ms ease;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
